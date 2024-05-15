@@ -1,0 +1,2 @@
+curl http://localhost:8080/user/add -d userId=0929395679 -d username=First -d email=davidcao6426@gmail.com -d password=hl654d93 -d coverImage=123 -d biography=text_text
+curl http://localhost:8080/user/all

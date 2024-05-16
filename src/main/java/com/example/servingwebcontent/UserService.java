@@ -6,5 +6,5 @@ public interface UserService {
     boolean addUser(User user);
     boolean updateUser(User user);
     boolean deleteUser(String id);
-    List<User> findAll();
+    User findUserById(String id);
 }

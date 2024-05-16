@@ -1,17 +1,26 @@
 package com.example.servingwebcontent;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import jakarta.persistence.*;
 import org.springframework.data.jpa.repository.query.Procedure;
 
+import java.util.Map;
+
 @Entity // This tells Hibernate to make a table out of this class
-@NamedStoredProcedureQuery(name = "addUser", procedureName = "addUser", parameters = {
-        @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_userId", type = String.class),
-        @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_username", type = String.class),
-        @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_email", type = String.class),
-        @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_password", type = String.class),
-        @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_coverImage", type = String.class),
-        @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_biography", type = String.class)
+@NamedStoredProcedureQueries({
+        @NamedStoredProcedureQuery(name = "addUser", procedureName = "addUser", parameters = {
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_userId", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_username", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_email", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_password", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_coverImage", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_biography", type = String.class)
+        }),
+        @NamedStoredProcedureQuery(name = "findUserById", procedureName = "findUserById", parameters = {
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_userId", type = String.class)
+        })
 })
+
 @Table(name = "User")
 public class User {
     @Id

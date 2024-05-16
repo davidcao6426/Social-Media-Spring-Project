@@ -30,9 +30,9 @@ public class UserController {
         return userService.deleteUser(Id);
     }
 
-    @GetMapping(path = "/userAll")
-    public List<User> findByUserAge() {
-        System.out.println("查詢所有：");
-        return userService.findAll();
+    @GetMapping(path = "/user")
+    public User findByUserId(@RequestParam(value = "id", required = true) String Id) {
+        System.out.println("查詢：");
+        return userService.findUserById(Id);
     }
 }

@@ -3,7 +3,6 @@ package com.example.servingwebcontent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -34,8 +33,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAll() {
-        return List.of();
+    public User findUserById(String id) {
+        return userRepository.findUserById(id);
     }
 
 

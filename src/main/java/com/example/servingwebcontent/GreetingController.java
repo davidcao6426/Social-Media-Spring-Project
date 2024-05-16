@@ -22,7 +22,7 @@ public class GreetingController {
     }
 
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody String addNewUser (@RequestParam Integer userId
+    public @ResponseBody String addNewUser (@RequestParam String userId
             , @RequestParam String username
             , @RequestParam String email
             , @RequestParam String password

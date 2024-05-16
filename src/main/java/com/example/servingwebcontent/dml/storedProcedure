@@ -1,0 +1,13 @@
+DROP procedure IF EXISTS addUser;
+CREATE procedure addUser (
+ IN p_userId varchar(15),
+ IN p_username varchar(20),
+ IN p_email varchar(50),
+ IN p_password varchar(50),
+ IN p_coverImage text,
+ IN p_biography text
+)
+BEGIN
+ INSERT INTO User(userId, username, email, password, coverImage, biography)
+ values (p_userId, p_username, p_email, p_password, p_coverImage, p_biography);
+END

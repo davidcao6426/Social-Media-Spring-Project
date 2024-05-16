@@ -13,7 +13,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean addUser(User user) {
-        return userRepository.addUser(user);
+        userRepository.addUser(
+                user.getUserId(),
+                user.getUsername(),
+                user.getEmail(),
+                user.getPassword(),
+                user.getCoverImage(),
+                user.getBiography());
+        return true;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.servingwebcontent.respository;
 
+import com.example.servingwebcontent.entity.Post;
 import com.example.servingwebcontent.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
@@ -15,5 +16,5 @@ public interface PostRepository extends CrudRepository<User, Integer> {
     @Procedure("deletePost")
     void editPost(String p_postId);
     @Query(value = "CALL findAllPost", nativeQuery = true)
-    List<User> findUserById(String p_userId);
+    List<Post> findAllPost(String p_userId);
 }

@@ -1,4 +1,5 @@
 CREATE procedure findAllPost()
 BEGIN
-    SELECT * FROM Post;
+    SELECT * FROM Post
+    WHERE removed = false;
 END

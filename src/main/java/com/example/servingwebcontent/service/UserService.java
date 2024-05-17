@@ -1,6 +1,6 @@
-package com.example.servingwebcontent;
+package com.example.servingwebcontent.service;
 
-import java.util.List;
+import com.example.servingwebcontent.entity.User;
 
 public interface UserService {
     boolean addUser(User user);

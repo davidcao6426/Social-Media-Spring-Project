@@ -1,4 +1,4 @@
-package com.example.servingwebcontent;
+package com.example.servingwebcontent.entity;
 
 import jakarta.persistence.*;
 

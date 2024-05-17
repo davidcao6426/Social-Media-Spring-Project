@@ -1,10 +1,9 @@
-package com.example.servingwebcontent;
+package com.example.servingwebcontent.controller;
 
+import com.example.servingwebcontent.service.UserService;
+import com.example.servingwebcontent.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(path="/api/user")

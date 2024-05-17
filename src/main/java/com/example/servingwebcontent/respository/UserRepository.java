@@ -1,5 +1,6 @@
-package com.example.servingwebcontent;
+package com.example.servingwebcontent.respository;
 
+import com.example.servingwebcontent.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.CrudRepository;

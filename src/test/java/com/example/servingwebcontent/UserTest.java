@@ -1,5 +1,7 @@
 package com.example.servingwebcontent;
 
+import com.example.servingwebcontent.entity.User;
+import com.example.servingwebcontent.respository.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.StoredProcedureQuery;

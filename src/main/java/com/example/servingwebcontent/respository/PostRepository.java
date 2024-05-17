@@ -16,5 +16,5 @@ public interface PostRepository extends CrudRepository<User, Integer> {
     @Procedure("deletePost")
     void editPost(String p_postId);
     @Query(value = "CALL findAllPost", nativeQuery = true)
-    List<Post> findAllPost(String p_userId);
+    List<Post> findAllPost();
 }

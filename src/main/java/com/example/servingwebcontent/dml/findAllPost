@@ -1,0 +1,4 @@
+CREATE procedure findAllPost()
+BEGIN
+    SELECT * FROM Post;
+END

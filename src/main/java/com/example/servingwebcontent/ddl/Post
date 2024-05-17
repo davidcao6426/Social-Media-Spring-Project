@@ -1,0 +1,14 @@
+create table Post
+(
+    postId    varchar(20)                          not null,
+    userId    varchar(15)                          not null,
+    content   text                                 not null,
+    image     text                                 null,
+    createdAt datetime   default CURRENT_TIMESTAMP not null,
+    removed   tinyint(1) default 0                 null,
+    constraint Post_pk
+        unique (postId),
+    constraint `Post_User_User ID_fk`
+        foreign key (userId) references User (userId)
+);
+

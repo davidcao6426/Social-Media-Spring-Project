@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAllUsers() {
-        return List.of();
+        return userRepository.findAllUser();
     }
 
     @Override

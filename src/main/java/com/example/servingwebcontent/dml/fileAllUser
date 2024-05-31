@@ -1,0 +1,4 @@
+CREATE procedure findAllUser()
+BEGIN
+    SELECT * FROM User
+END

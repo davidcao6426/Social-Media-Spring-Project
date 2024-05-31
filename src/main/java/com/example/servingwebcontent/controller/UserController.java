@@ -5,8 +5,10 @@ import com.example.servingwebcontent.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping(path="/api/user")
+@RequestMapping(path="/api")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -17,21 +19,33 @@ public class UserController {
         return userService.addUser(user);
     }
 
-    @PutMapping(path = "/user")
-    public boolean updateUser(@RequestBody User user) {
+    @PutMapping(path = "/user/{id}")
+    public boolean updateUser(@PathVariable String id, @RequestBody User user) {
         System.out.println("更新：");
-        return userService.updateUser(user);
+        return userService.updateUser(id, user);
     }
 
-    @DeleteMapping(path = "/user")
-    public boolean delete(@RequestParam(value = "id", required = true) String Id) {
+    @DeleteMapping(path = "/user/{id}")
+    public boolean delete(@PathVariable String id) {
         System.out.println("刪除：");
-        return userService.deleteUser(Id);
+        return userService.deleteUser(id);
     }
 
-    @GetMapping(path = "/user")
-    public User findByUserId(@RequestParam(value = "id", required = true) String Id) {
+    @GetMapping(path = "/user/{id}")
+    public User findByUserId(@PathVariable String id) {
         System.out.println("查詢：");
-        return userService.findUserById(Id);
+        return userService.findUserById(id);
+    }
+
+    @GetMapping(path = "/users")
+    public List<User> findAllUser() {
+        System.out.println("查詢全部：");
+        return userService.findAllUsers();
+    }
+
+    @PostMapping(path = "/login")
+    public boolean login(@RequestBody User user) {
+        System.out.println("登入：");
+        return userService.checkUserValid(user);
     }
 }

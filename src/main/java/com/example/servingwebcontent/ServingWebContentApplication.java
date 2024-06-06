@@ -18,7 +18,7 @@ public class ServingWebContentApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/user/*").allowedOrigins("http://localhost:5174");
+                registry.addMapping("/api/*").allowedOrigins("http://localhost:5174");
             }
         };
     }

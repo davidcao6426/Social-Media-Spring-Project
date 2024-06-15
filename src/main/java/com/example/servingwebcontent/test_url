@@ -4,7 +4,7 @@ curl http://localhost:8080/user/all
 
 Tools > HttpClient
 
-POST http://localhost:8080//api/user/user
+POST http://localhost:8080/api/user
 Content-Type: application/json
 
 {
@@ -16,5 +16,5 @@ Content-Type: application/json
   "biography": "text_text"
 }
 
-GET http://localhost:8080/api/user/user?id=176
+GET http://localhost:8080/api/user/176
 Accept: application/json

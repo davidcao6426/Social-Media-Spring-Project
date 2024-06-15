@@ -17,5 +17,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     User findUserById(String p_userId);
     @Query(value = "CALL findAllUser", nativeQuery = true)
     List<User> findAllUser();
+    @Procedure("deleteUser")
+    void deleteUser(String p_userId);
 
 }

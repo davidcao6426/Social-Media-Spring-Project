@@ -1,4 +1,6 @@
+DROP procedure IF EXISTS findAllUser;
 CREATE procedure findAllUser()
 BEGIN
     SELECT * FROM User
+    WHERE removed = 0
 END

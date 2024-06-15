@@ -1,0 +1,8 @@
+CREATE procedure deleteUser(
+ IN p_userId varchar(15)
+)
+BEGIN
+    UPDATE User
+    SET removed = true
+    WHERE userId = p_userId;
+END

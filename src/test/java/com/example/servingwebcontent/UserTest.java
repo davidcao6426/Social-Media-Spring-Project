@@ -21,20 +21,20 @@ class UserTest {
 
     @Test
     void createUserTest() {
-        User n = new User();
+        User user = new User();
         String userId="0929395679";
         String username="First";
         String email="davidcao6426@gmail.com";
         String password="hl654d93";
         String coverImage="123";
         String biography="text_text";
-        n.setUserId(userId);
-        n.setUsername(username);
-        n.setEmail(email);
-        n.setPassword(password);
-        n.setCoverImage(coverImage);
-        n.setBiography(biography);
-        userRepository.save(n);
+        user.setUserId(userId);
+        user.setUsername(username);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setCoverImage(coverImage);
+        user.setBiography(biography);
+        userRepository.save(user);
     }
 
     @Test

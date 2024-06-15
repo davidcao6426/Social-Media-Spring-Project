@@ -4,10 +4,8 @@ create table User
         primary key,
     username   varchar(20)  not null comment '使用者名稱',
     email      varchar(50)  not null comment '使用者電子郵件',
-    password   varchar(50)  not null comment '密碼請加鹽(salt)並經雜湊(Hash)後儲存，避免明碼外洩',
+    password   varchar(72)  not null comment '密碼請加鹽(salt)並經雜湊(Hash)後儲存，避免明碼外洩',
     coverImage text         null comment '封面照片(非必要欄位)',
-    biography  text         not null comment '使用者的自我介紹',
-    postId     varchar(255) not null,
-    content    varchar(255) null
+    biography  text         not null comment '使用者的自我介紹'
 );
 

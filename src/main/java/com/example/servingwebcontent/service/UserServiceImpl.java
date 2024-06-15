@@ -17,19 +17,26 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean addUser(User user) {
+        User newUser = encryptPassword(user);
         try{
             userRepository.addUser(
-                    user.getUserId(),
-                    user.getUsername(),
-                    user.getEmail(),
-                    user.getPassword(),
-                    user.getCoverImage(),
-                    user.getBiography());
+                    newUser.getUserId(),
+                    newUser.getUsername(),
+                    newUser.getEmail(),
+                    newUser.getPassword(),
+                    newUser.getCoverImage(),
+                    newUser.getBiography());
             return true;
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+//            e.printStackTrace();
         }
         return false;
+    }
+
+    public User encryptPassword(User user){
+        user.setPassword(EncryptUtil.encryptPassword(user.getPassword()));
+        return user;
     }
 
     @Override

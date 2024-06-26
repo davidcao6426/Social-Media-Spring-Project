@@ -66,7 +66,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean checkUserValid(User user) {
-        return EncryptUtil.decryptPassword(user.getPassword(), findUserById(user.getUserId()).getPassword());
+        User foundUser = findUserById(user.getUserId());
+        if(foundUser != null){
+            return EncryptUtil.decryptPassword(user.getPassword(), foundUser.getPassword());
+        }else{
+            return false;
+        }
+
     }
 
 

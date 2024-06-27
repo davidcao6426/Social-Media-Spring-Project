@@ -1,5 +1,6 @@
+DROP procedure IF EXISTS deletePost;
 CREATE procedure deletePost(
- IN p_postId varchar(15)
+ IN p_postId varchar(36)
 )
 BEGIN
     UPDATE Post

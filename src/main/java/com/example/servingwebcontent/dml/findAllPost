@@ -1,5 +1,7 @@
+DROP procedure IF EXISTS findAllPost;
 CREATE procedure findAllPost()
 BEGIN
     SELECT * FROM Post
-    WHERE removed = false;
+    WHERE removed = false
+    ORDER BY createAt desc;
 END

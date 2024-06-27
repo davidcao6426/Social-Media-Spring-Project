@@ -1,9 +1,12 @@
+DROP procedure IF EXISTS addPost;
 CREATE procedure addPost (
- IN p_postId varchar(15),
+ IN p_postId varchar(36),
  IN p_userId varchar(20),
- IN p_content varchar(50)
+ IN p_title text,
+ IN p_content text,
+ IN p_createAt datetime
 )
 BEGIN
- INSERT INTO Post(postId, userId, content)
- values (p_postId, p_userId, p_content);
+ INSERT INTO Post(postId, userId, title, content, createAt)
+ values (p_postId, p_userId, p_title, p_content, p_createAt);
 END

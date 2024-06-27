@@ -1,11 +1,11 @@
 create table Post
 (
-    postId    varchar(20)                          not null,
+    postId    varchar(36)                          not null,
     userId    varchar(15)                          not null,
+    title   text                                 not null,
     content   text                                 not null,
-    image     text                                 null,
-    createdAt datetime   default CURRENT_TIMESTAMP not null,
-    removed   tinyint(1) default 0                 null,
+    createAt datetime                             not null,
+    removed   tinyint(1) default 0                 not null,
     constraint Post_pk
         unique (postId),
     constraint `Post_User_User ID_fk`

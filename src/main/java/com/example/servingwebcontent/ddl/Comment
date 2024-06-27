@@ -3,7 +3,7 @@ create table Comment
     commentId varchar(20)                        not null
         primary key,
     userId    varchar(15)                        not null,
-    postId    varchar(20)                        not null,
+    postId    varchar(36)                        not null,
     content   text                               not null,
     createdAt datetime default CURRENT_TIMESTAMP not null,
     constraint Comment_Post_postId_fk

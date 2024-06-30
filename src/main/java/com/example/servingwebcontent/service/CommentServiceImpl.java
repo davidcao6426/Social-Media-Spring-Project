@@ -15,6 +15,18 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public boolean addComment(Comment comment) {
+        try{
+            commentRepository.addComment(
+                    comment.getCommentId(),
+                    comment.getPostId(),
+                    comment.getUserId(),
+                    comment.getContent(),
+                    comment.getCreateAt()
+            );
+            return true;
+        }catch (Exception e){
+            System.out.println(e);
+        }
         return false;
     }
 

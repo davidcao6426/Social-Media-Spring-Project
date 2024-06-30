@@ -1,0 +1,9 @@
+DROP procedure IF EXISTS findCommentsByPostId;
+CREATE procedure findCommentsByPostId(
+    IN p_postId varchar(36)
+)
+BEGIN
+    SELECT * FROM Comment
+    WHERE postId = p_postId and removed = 0
+    ORDER BY createAt;
+END

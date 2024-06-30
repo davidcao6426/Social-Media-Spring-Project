@@ -1,9 +1,13 @@
 package com.example.servingwebcontent.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity // This tells Hibernate to make a table out of this class
@@ -23,7 +27,14 @@ public class Post {
     private String content;
 
     @Column(name = "createAt")
-    private Timestamp createAt = Timestamp.from(ZonedDateTime.now().toInstant());;
+    private Timestamp createAt = Timestamp.from(ZonedDateTime.now().toInstant());
+
+//    @JsonManagedReference
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
+//    private Set<Comment> comments;
+
+    @Transient
+    private List<Comment> comments;
 
     public String getPostId() {
         return postId;
@@ -65,6 +76,14 @@ public class Post {
         this.title = title;
     }
 
+//    public Set<Comment> getComments() {
+//        return comments;
+//    }
+//
+//    public void setComments(Set<Comment> comments) {
+//        this.comments = comments;
+//    }
+
     @Override
     public String toString() {
         return "Post{" +
@@ -74,5 +93,13 @@ public class Post {
                 ", content='" + content + '\'' +
                 ", createAt=" + createAt +
                 '}';
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }

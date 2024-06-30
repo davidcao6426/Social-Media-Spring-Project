@@ -1,14 +1,11 @@
 package com.example.servingwebcontent.respository;
 
-import com.example.servingwebcontent.config.SecurityConfig;
 import com.example.servingwebcontent.entity.Post;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
-import org.springframework.test.context.ContextConfiguration;
 
 import java.util.List;
 

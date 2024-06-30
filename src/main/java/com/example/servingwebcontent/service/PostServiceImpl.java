@@ -2,6 +2,7 @@ package com.example.servingwebcontent.service;
 
 import com.example.servingwebcontent.entity.Post;
 import com.example.servingwebcontent.respository.PostRepository;
+import com.example.servingwebcontent.respository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,9 @@ public class PostServiceImpl implements PostService{
 
     @Autowired
     private PostRepository postRepository;
+
+    @Autowired
+    private CommentService commentService;
 
     @Override
     public boolean addPost(Post post) {
@@ -58,7 +62,9 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public Post findPostById(String id) {
-        return postRepository.findPostById(id);
+        Post post = postRepository.findPostById(id);
+        post.setComments(commentService.findCommentsByPostId(id));
+        return post;
     }
 
     @Override

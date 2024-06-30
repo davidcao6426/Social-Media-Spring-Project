@@ -1,0 +1,9 @@
+DROP procedure IF EXISTS findPostById;
+CREATE procedure findPostById(
+    IN p_postId varchar(36)
+)
+BEGIN
+    SELECT * FROM Post
+    WHERE postId = p_postId and removed = 0
+    ORDER BY createdAt desc;
+END

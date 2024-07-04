@@ -40,9 +40,9 @@ Comment
 
 ## test
 現僅針對各物件做單元測試，整合測試尚未實現。
-* controllerUnitTest: 使用 mockMvc 與 MockBean，用以確認 controller 能正確回傳。
-* repositoryUnitTest:  透過定義於 repository 中的預存程式(stored procedure) 進行資料庫操作，確保預存程式在各項測試情境的預期輸出與實際輸出一致。
-* serviceUnitTest: 使用 MockBean，對 service 進行各項例外情境測試與正確性驗證，確保功能正常。
+* controllerTest: 使用 mockMvc 與 MockBean，用以確認 controller 能正確回傳。
+* repositoryTest:  透過定義於 repository 中的預存程式(stored procedure) 進行資料庫操作，確保預存程式在各項測試情境的預期輸出與實際輸出一致。
+* serviceTest: 使用 MockBean，對 service 進行各項例外情境測試與正確性驗證，確保功能正常。
 
 # 版本資訊
 ## BackEnd

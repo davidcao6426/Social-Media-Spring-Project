@@ -1,6 +1,6 @@
 # 專案說明
 本專案為使用 Spring Boot 與 Vue 前後端分離練習作品。  
-本專案為後端專案，前端專案存放於 https://github.com/davidcao6426/Social-Media-Vue-Project.git。  
+本專案為後端專案，前端專案存放於 https://github.com/davidcao6426/Social-Media-Vue-Project.git
 專案參考自社群網頁軟體，實現登入、註冊、發文、回覆等功能。
 
 # 已實作功能

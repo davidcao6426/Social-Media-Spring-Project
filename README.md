@@ -30,19 +30,19 @@ Comment
 
 # BackEnd 資料夾結構
 ## main
-* controller: 處理 FrontEnd 需求，為 api server 對外連接的介面。
-* entity: 存放封裝來自Database資料的相關物件。
-* repository: 處理後端與Database互動的相關操作。
-* service: 處理業務邏輯。
-* config: 存放server設定相關物件，包含cors設定、security設定等。
-* util: 存放公用函式庫，包含加密等。
-* db: 存放資料庫相關的文件，包含DDL、DML、DQL等，在[資料庫建置](#資料庫建置)有更詳細的說明。
+* [controller](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/controller): 處理 FrontEnd 需求，為 api server 對外連接的介面。
+* [entity](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/entity): 存放封裝來自Database資料的相關物件。
+* [repository](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/respository): 處理後端與Database互動的相關操作。
+* [service](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/service): 處理業務邏輯。
+* [config](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/config): 存放server設定相關物件，包含cors設定、security設定等。
+* [util](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/util): 存放公用函式庫，包含加密等。
+* [db](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/db): 存放資料庫相關的文件，包含DDL、DML、DQL等，在[資料庫建置](#資料庫建置)有更詳細的說明。
 
 ## test
 現僅針對各物件做單元測試，整合測試尚未實現。
-* controllerTest: 使用 mockMvc 與 MockBean，用以確認 controller 能正確回傳。
-* repositoryTest:  透過定義於 repository 中的預存程式(stored procedure) 進行資料庫操作，確保預存程式在各項測試情境的預期輸出與實際輸出一致。
-* serviceTest: 使用 MockBean，對 service 進行各項例外情境測試與正確性驗證，確保功能正常。
+* [controllerTest](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/test/java/com/example/servingwebcontent/controller): 使用 mockMvc 與 MockBean，用以確認 controller 能正確回傳。
+* [repositoryTest](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/test/java/com/example/servingwebcontent/respository):  透過定義於 repository 中的預存程式(stored procedure) 進行資料庫操作，確保預存程式在各項測試情境的預期輸出與實際輸出一致。
+* [serviceTest](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/test/java/com/example/servingwebcontent/service): 使用 MockBean，對 service 進行各項例外情境測試與正確性驗證，確保功能正常。
 
 # 版本資訊
 ## BackEnd
@@ -72,6 +72,6 @@ Comment
 * 網站入口: http://localhost:5173/login
 
 # 資料庫建置
-* 資料庫使用之資料定義語言(Data Definition Language，DDL)存放於 src/main/java/com/example/servingwebcontent/db/ddl 。  
+* 資料庫使用之資料定義語言(Data Definition Language，DDL)存放於 [src/main/java/com/example/servingwebcontent/db/ddl](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/db/ddl) 。  
 * 本專案使用 stored procedure 作為操作資料庫的媒介，所使用之資料查詢語言(Data Query Language，DQL)與資料操作語言(Data Manipulation Language，DML)，
-存放於 src/main/java/com/example/servingwebcontent/db/ 中的dql與dml資料夾。  
+存放於 [src/main/java/com/example/servingwebcontent/db/](https://github.com/davidcao6426/Social-Media-Spring-Project/tree/main/src/main/java/com/example/servingwebcontent/db) 中的dql與dml資料夾。  
